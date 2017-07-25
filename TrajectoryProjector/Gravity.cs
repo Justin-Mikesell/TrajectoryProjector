@@ -6,34 +6,41 @@ using System.Threading.Tasks;
 
 namespace TrajectoryProjector
 {
-    class Gravity
+    class Falling : Object
     {
-        public static decimal t;
-        public readonly static decimal g = 9.8M;
-        public static decimal m;
-        public static decimal p = 1.225M;
-        public static decimal A;
-        public static decimal C;
+        public static decimal time;
+        //Given the earths gravity
+        public readonly static decimal gravity = 9.8M;
+
+        public static decimal mass;
+        //given the density of air at sealevel
+        // can be changed by user as needed
+        public static decimal p_DensityofAir = 1.225M;
+
+        public static decimal A_ProjectedAreaOfObject;
+        public static decimal dragCoefficient;
         
+
+
         public static decimal FreeFallVelocity(decimal timeOfFlightInSeconds)
         {
-            decimal t = timeOfFlightInSeconds;
-            decimal velocity = g * t;
+            time = timeOfFlightInSeconds;
+            decimal velocity = gravity * time;
 
             return velocity;
         }
         
         public static decimal FreeFallDistance(decimal timeOfFlightInSeconds)
         {
-            t = timeOfFlightInSeconds;
-            decimal distance = .5M * g * t * t;
+            time = timeOfFlightInSeconds;
+            decimal distance = .5M * gravity * time * time;
 
             return distance;
         }
 
-        public static decimal TerminalVelocity(decimal ObjectRadiusInCentimeters, decimal ObjectDensityInGrams)
-        {
+        //public static decimal TerminalVelocity(decimal ObjectRadiusInCentimeters, decimal ObjectDensityInGrams)
+        //{
 
-        }
+        //}
     }
 }

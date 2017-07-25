@@ -10,7 +10,14 @@ namespace TrajectoryProjector
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Gravity.Velocity(13) + " m/s It will be {0} meters away", Gravity.Distance(13) );
+            Console.WriteLine("Velocity will be {1} m/s It will be {0} meters away", Falling.FreeFallDistance(13), Falling.FreeFallVelocity(13));
+
+            Object sphere = new Object(4M);
+
+            Object disc = new Object(4.0);
+
+            Object rectangle = new Object(4, 4);
+           
         }
     }
 }
