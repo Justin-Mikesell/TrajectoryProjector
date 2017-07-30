@@ -17,6 +17,8 @@ namespace TrajectoryProjector
             Object disc = new Object(4.0);
 
             Object rectangle = new Object(4, 4);
+
+            Console.WriteLine(Falling.ProjectedAreaRectangle(10));
            
         }
     }

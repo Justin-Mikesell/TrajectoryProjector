@@ -11,6 +11,9 @@ namespace TrajectoryProjector
         public static decimal areaOfRectangle;
         public static decimal areaOfCircularDisc;
         public static decimal areaOfSphere;
+        public static decimal projectedAreaOfRectangle;
+        public static decimal projectedAreaOfCircularDisc;
+        public static decimal projectedAreaOfSphere;
 
         public Object()
         {
@@ -35,6 +38,10 @@ namespace TrajectoryProjector
             areaOfRectangle = lengthOfRectangle * widthOfRectangle;
             Console.WriteLine("Area of rectangle is {0}", areaOfRectangle);
         }
+
+       
+
+
         
     }
 }

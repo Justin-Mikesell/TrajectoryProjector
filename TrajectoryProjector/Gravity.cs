@@ -38,9 +38,24 @@ namespace TrajectoryProjector
             return distance;
         }
 
-        //public static decimal TerminalVelocity(decimal ObjectRadiusInCentimeters, decimal ObjectDensityInGrams)
-        //{
+        public static decimal TerminalVelocity(decimal densityOfAir, decimal dragCoefficient, decimal projectedArea, decimal gravityOfPlanet, decimal mass)
+        {
+            decimal velocity = (2 * mass * gravityOfPlanet) / (densityOfAir * projectedArea * dragCoefficient);
+            double velocityConvert = (double)velocity;
+            double TV = Math.Sqrt(velocityConvert);
+            decimal terminalVelocity = (decimal)TV;
 
-        //}
+            return terminalVelocity;
+        }
+
+        public static decimal EarthTerminalVelocitySeaLevel(decimal dragCoefficient, decimal projectedArea, decimal mass)
+        {
+            decimal velocity = (2 * mass * gravity) / (p_DensityofAir * projectedArea * dragCoefficient);
+            double velocityConvert = (double)velocity;
+            double TV = Math.Sqrt(velocityConvert);
+            decimal terminalVelocity = (decimal)TV;
+
+            return terminalVelocity;
+        }
     }
 }
