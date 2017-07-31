@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Falling_Object.cs" />
     <Compile Include="Area.cs" />
+    <Compile Include="Planet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -14,11 +14,19 @@ namespace TrajectoryProjector
 
             
 
-            Console.WriteLine("Terminal Velocity is: {0:N4}", Falling_Object.TerminalVelocity(1.5M, 1.68M, 9, 9.8M, 200));
+            Console.WriteLine("Terminal Velocity is: {0:N4}", Falling_Object.TerminalVelocity(1.5M, 1.68M, 3, 9.8M, 10.2040M));
 
-            Falling_Object rectangle = new Falling_Object(200, 3, 3, 1.68M);
+
+            Falling_Object rectangle = new Falling_Object(100, 3, 1.68M);
+
 
             Console.WriteLine("Terminal Velocity is: {0:N4}", Falling_Object.EarthTerminalVelocitySeaLevel(rectangle));
+
+
+            Planet earth = new Planet(9.80665M, 1.5M);
+
+
+            Console.WriteLine("Terminal Velocity is: {0:N4}", Falling_Object.TerminalVelocity(earth, rectangle));
            
         }
     }

@@ -11,7 +11,7 @@ namespace TrajectoryProjector
         public static decimal time;
 
         //Given the earths gravity
-        public readonly static decimal gravity = 9.8M;
+        public readonly static decimal gravity = 9.80665M;
 
         public static decimal mass;
 
@@ -25,10 +25,10 @@ namespace TrajectoryProjector
 
         
 
-        public Falling_Object(decimal Mass, decimal Length, decimal Width, decimal DragCoefficient)
+        public Falling_Object(decimal weightInKg, decimal ProjectedAreaOfObject, decimal DragCoefficient)
         {
-            mass = Mass;
-            A_ProjectedAreaOfObject = Length * Width;
+            mass = weightInKg / gravity;
+            A_ProjectedAreaOfObject = ProjectedAreaOfObject;
             dragCoefficient = DragCoefficient;
         }
         
@@ -74,6 +74,18 @@ namespace TrajectoryProjector
         public static decimal EarthTerminalVelocitySeaLevel(Falling_Object Object)
         {
             decimal velocity = (2 * mass * gravity) / (p_DensityofAir * A_ProjectedAreaOfObject * dragCoefficient);
+            double velocityConvert = (double)velocity;
+            double TV = Math.Sqrt(velocityConvert);
+            decimal terminalVelocity = (decimal)TV;
+
+
+            return terminalVelocity;
+        }
+
+        public static decimal TerminalVelocity(Planet planet, Falling_Object Object)
+        {
+            decimal velocity = (2 * mass * Planet.planetGravity) / (Planet.airDensity * A_ProjectedAreaOfObject * dragCoefficient);
+
             double velocityConvert = (double)velocity;
             double TV = Math.Sqrt(velocityConvert);
             decimal terminalVelocity = (decimal)TV;
