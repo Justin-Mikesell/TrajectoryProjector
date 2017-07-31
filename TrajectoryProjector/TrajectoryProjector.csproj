@@ -42,8 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gravity.cs" />
-    <Compile Include="Object.cs" />
+    <Compile Include="Falling_Object.cs" />
+    <Compile Include="Area.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

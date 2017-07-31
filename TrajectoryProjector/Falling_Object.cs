@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrajectoryProjector
 {
-    class Falling_Object : Object
+    class Falling_Object : Area
     {
         public static decimal time;
 

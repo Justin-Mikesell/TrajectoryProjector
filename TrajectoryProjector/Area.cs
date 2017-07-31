@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrajectoryProjector
 {
-    class Object
+    class Area
     {
         public static decimal areaOfRectangle;
         public static decimal areaOfCircularDisc;
@@ -15,25 +15,25 @@ namespace TrajectoryProjector
         public static decimal projectedAreaOfCircularDisc;
         public static decimal projectedAreaOfSphere;
 
-        public Object()
+        public Area()
         {
 
         }
 
-        public Object(decimal radiusOfSphere)
+        public Area(decimal radiusOfSphere)
         {
             areaOfSphere = 4 * (decimal)Math.PI * (radiusOfSphere * radiusOfSphere);
             Console.WriteLine("Area of sphere is {0}", areaOfSphere);
         }
 
-        public Object(double radiusOfDisc)
+        public Area(double radiusOfDisc)
         {
             decimal r = (decimal)radiusOfDisc;
             areaOfCircularDisc = (decimal)Math.PI * (r * r);
             Console.WriteLine("Area of disc is {0}", areaOfCircularDisc);
         }
 
-        public Object(decimal lengthOfRectangle, decimal widthOfRectangle)
+        public Area(decimal lengthOfRectangle, decimal widthOfRectangle)
         {
             areaOfRectangle = lengthOfRectangle * widthOfRectangle;
             Console.WriteLine("Area of rectangle is {0}", areaOfRectangle);
