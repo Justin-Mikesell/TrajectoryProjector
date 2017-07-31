@@ -10,15 +10,15 @@ namespace TrajectoryProjector
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Velocity will be {1} m/s It will be {0} meters away", Falling.FreeFallDistance(13), Falling.FreeFallVelocity(13));
+            Console.WriteLine("Velocity will be {1} m/s It will be {0} meters away", Falling_Object.FreeFallDistance(13), Falling_Object.FreeFallVelocity(13));
 
-            Object sphere = new Object(4M);
+            
 
-            Object disc = new Object(4.0);
+            Console.WriteLine("Terminal Velocity is: {0:N4}", Falling_Object.TerminalVelocity(1.5M, 1.68M, 9, 9.8M, 200));
 
-            Object rectangle = new Object(4, 4);
+            Falling_Object rectangle = new Falling_Object(200, 3, 3, 1.68M);
 
-            Console.WriteLine(Falling.ProjectedAreaRectangle(10));
+            Console.WriteLine("Terminal Velocity is: {0:N4}", Falling_Object.EarthTerminalVelocitySeaLevel(rectangle));
            
         }
     }
