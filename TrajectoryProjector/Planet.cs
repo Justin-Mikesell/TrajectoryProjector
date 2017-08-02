@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace TrajectoryProjector
 {
-    class Planet
+    class Planet : Area
     {
-        public static decimal planetGravity;
-        public static decimal airDensity;
-
+        public decimal gravity;
+        public decimal atmosphereDensity;
+        
         public Planet(decimal gravitationalPull, decimal atmosphericDensity)
         {
-            planetGravity = gravitationalPull;
-            airDensity = atmosphericDensity;
+            gravity = gravitationalPull;
+            atmosphereDensity = atmosphericDensity;
         }
     }
 }

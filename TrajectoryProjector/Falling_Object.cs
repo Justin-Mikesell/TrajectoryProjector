@@ -84,7 +84,7 @@ namespace TrajectoryProjector
 
         public static decimal TerminalVelocity(Planet planet, Falling_Object Object)
         {
-            decimal velocity = (2 * mass * Planet.planetGravity) / (Planet.airDensity * A_ProjectedAreaOfObject * dragCoefficient);
+            decimal velocity = (2 * mass * planet.gravity ) / (planet.atmosphereDensity * A_ProjectedAreaOfObject * dragCoefficient);
 
             double velocityConvert = (double)velocity;
             double TV = Math.Sqrt(velocityConvert);

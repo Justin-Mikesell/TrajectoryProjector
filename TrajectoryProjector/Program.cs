@@ -24,10 +24,14 @@ namespace TrajectoryProjector
 
 
             Planet earth = new Planet(9.80665M, 1.5M);
-
+            Planet mars = new Planet(3.71M, 0.020M);
 
             Console.WriteLine("Terminal Velocity is: {0:N4}", Falling_Object.TerminalVelocity(earth, rectangle));
-           
+
+            
+
+            Console.WriteLine("Terminal Velocity is: {0:N4}", Falling_Object.TerminalVelocity(mars, rectangle));
+
         }
     }
 }
