@@ -17,7 +17,7 @@ namespace TrajectoryProjector
 
         //given the density of air at sealevel
         // can be changed by user as needed
-        private static decimal p_DensityofAir = 1.5M;
+        private static decimal p_DensityofAir = 1.225M;
 
         private static decimal A_ProjectedAreaOfObject;
 
