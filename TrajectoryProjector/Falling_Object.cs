@@ -8,22 +8,22 @@ namespace TrajectoryProjector
 {
     class Falling_Object : Area
     {
-        public static decimal time;
+        private static decimal time;
 
         //Given the earths gravity
-        public readonly static decimal gravity = 9.80665M;
+        private static decimal gravity = 9.80665M;
 
-        public static decimal mass;
+        private static decimal mass;
 
         //given the density of air at sealevel
         // can be changed by user as needed
-        public static decimal p_DensityofAir = 1.5M;
+        private static decimal p_DensityofAir = 1.5M;
 
-        public static decimal A_ProjectedAreaOfObject;
+        private static decimal A_ProjectedAreaOfObject;
 
-        public static decimal dragCoefficient;
+        private static decimal dragCoefficient;
 
-        
+
 
         public Falling_Object(decimal weightInKg, decimal ProjectedAreaOfObject, decimal DragCoefficient)
         {
@@ -31,6 +31,25 @@ namespace TrajectoryProjector
             A_ProjectedAreaOfObject = ProjectedAreaOfObject;
             dragCoefficient = DragCoefficient;
         }
+
+        public decimal ObjectWeight
+        {
+            get { return mass; }
+            set { mass = value / gravity; }
+        }
+
+        public decimal ProjectedArea
+        {
+            get { return A_ProjectedAreaOfObject; }
+            set { A_ProjectedAreaOfObject = value; }
+        }
+
+        public decimal DragCoefficient
+        {
+            get { return dragCoefficient; }
+            set { dragCoefficient = value; }
+        }
+
         
 
 
@@ -84,7 +103,7 @@ namespace TrajectoryProjector
 
         public static decimal TerminalVelocity(Planet planet, Falling_Object Object)
         {
-            decimal velocity = (2 * mass * planet.gravity ) / (planet.atmosphereDensity * A_ProjectedAreaOfObject * dragCoefficient);
+            decimal velocity = (2 * mass * planet.PlanetGravity ) / (planet.PlanetDensity * A_ProjectedAreaOfObject * dragCoefficient);
 
             double velocityConvert = (double)velocity;
             double TV = Math.Sqrt(velocityConvert);

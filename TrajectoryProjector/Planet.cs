@@ -8,13 +8,25 @@ namespace TrajectoryProjector
 {
     class Planet : Area
     {
-        public decimal gravity;
-        public decimal atmosphereDensity;
+        private decimal gravity;
+        private decimal atmosphereDensity;
         
         public Planet(decimal gravitationalPull, decimal atmosphericDensity)
         {
             gravity = gravitationalPull;
             atmosphereDensity = atmosphericDensity;
+        }
+
+        public decimal PlanetDensity 
+        {
+            get { return atmosphereDensity; }
+            set { atmosphereDensity = value; }
+        }
+
+        public decimal PlanetGravity
+        {
+            get { return gravity; }
+            set { gravity = value; }
         }
     }
 }
